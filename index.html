@@ -20,12 +20,16 @@
 <script>
 
     $("#pop").click(function(){
-        pop.show({
+        pop.confirm({
             showbg:true,
             close:true,
+            title:'弹层',
             closefunc: function() {
                 alert(1);
-            }
+            },
+            content:'this is a pop test',
+            okText:'好',
+            cancelText:'不好'
         });
     });
 

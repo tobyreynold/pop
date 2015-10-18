@@ -23,48 +23,79 @@
          *      closefunc:func,
          *      okText:'ok',
          *      okfunc:func,
+         *      content:'text',
+         *      cancelText:'cancel'
+         *
+         *
          *
          *
          *  }
-         *
-         *
          */
         _create:function(config) {
 
-            var _this = this;
+            var _this = this,
+                body = $("body");
 
             this._element_bg = $('<div class="pop-bg"></div>');
             if(config.showbg) {
-                $("body").append(this._element_bg);
+                body.append(this._element_bg);
             }
 
-            if(config.close) {
-                this._element = $("<div class='pop-content'><span class='pop-close'>X</span></div>");
-            } else {
-                this._element = $("<div class='pop-content'></div>");
-            }
+            this._element = $("<div class='pop-content'></div>");
 
-            $("body").append(this._element);
+            body.append(this._element);
 
-            if(config.closefunc) {
-                $("body").on('click','.pop-close,.pop-bg',function() {
+            if(config.close && config.closefunc) {
+                body.on('click','.pop-close,.pop-bg',function() {
                     _this.close(config);
                 });
             }
 
         },
 
-        show:function(config) {
-          var conf = config || {};
-          this._create(conf);
+        _show:function(config) {
+            var conf = config || {},
+                html;
+            this._create(conf);
+
+            if(config.title && config.close) {
+                html = "<h4>"+ config.title +"<span class='pop-close'>X</span></h4>";
+            } else if (config.title) {
+                html = "<h4>"+ config.title +"</h4>";
+            } else if (config.close) {
+                html = "<h4><span class='pop-close'>X</span></h4>";
+            } else {
+                html='';
+            }
+
+            if(config.type == "alert" || config.type == 'confirm') {
+
+                html += '<div class="pop-main">'+ config.content +'</div>';
+                if(config.type == "alert" && config.okText) {
+                    html += '<div><span class="btn-ok">'+ (config.okText? config.okText:'OK') +'</span></div>';
+                } else if (config.type == "confirm" && (config.okText || config.cancelText)) {
+                    html += '<div><span class="btn-ok">'+ (config.okText? config.okText:'OK') +'</span><span class="btn-cancel">'+ (config.cancelText? config.cancelText:'Cancel') +'</span></div>';
+                } else {
+                    html += config.text;
+                }
+            } else {
+                html += '<div class="pop-main">'+ config.content +'</div>';
+            }
+
+            this._element.append(html);
+
         },
 
 
+        alert:function(config) {
+            config.type = "alert";
+            this._show(config);
+        },
 
-
-        alert:function() {},
-
-        confirm:function() {},
+        confirm:function(config) {
+            config.type = "confirm";
+            this._show(config);
+        },
 
         tips:function() {},
 

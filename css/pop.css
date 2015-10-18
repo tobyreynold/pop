@@ -20,3 +20,14 @@
     bottom: 0;
     margin: auto;
 }
+
+.pop-content h4 {
+    overflow: hidden;
+    margin: 0;
+    text-align: center;
+    border-bottom: 1px solid #666;
+}
+
+.pop-close {
+    float: right;
+}
