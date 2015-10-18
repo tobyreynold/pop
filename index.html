@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片轮播demo</title>
+    <link rel="stylesheet" href="css/pop.css">
+</head>
+<body>
+<div class="container">
+
+
+    <button type="button" id="pop">
+        弹层
+    </button>
+
+</div>
+<script src="http://apps.bdimg.com/libs/zepto/1.1.4/zepto.js"></script>
+<script src="js/pop.js"></script>
+
+<script>
+
+    $("#pop").click(function(){
+        pop.show({
+            showbg:true,
+            close:true,
+            closefunc: function() {
+                alert(1);
+            }
+        });
+    });
+
+</script>
+</body>
+</html>
