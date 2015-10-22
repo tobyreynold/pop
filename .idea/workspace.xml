@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="80c2e1ed-cd56-4c45-a3b6-ca4e7c8f18f1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/pop.css" afterPath="$PROJECT_DIR$/css/pop.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/pop.js" afterPath="$PROJECT_DIR$/js/pop.js" />
     </list>
     <ignored path="pop.iws" />
@@ -52,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pop.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pop.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/pop.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1497" max-vertical-offset="2355">
-              <caret line="125" column="24" selection-start-line="125" selection-start-column="24" selection-end-line="125" selection-end-column="24" />
+            <state vertical-scroll-proportion="1.6883117" vertical-offset="0" max-vertical-offset="2490">
+              <caret line="78" column="24" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -64,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5515695" vertical-offset="156" max-vertical-offset="825">
-              <caret line="35" column="11" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
+            <state vertical-scroll-proportion="-8.5" vertical-offset="336" max-vertical-offset="1050">
+              <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -93,9 +92,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/js/pop.js" />
         <option value="$PROJECT_DIR$/css/pop.css" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/pop.js" />
       </list>
     </option>
   </component>
@@ -448,12 +447,12 @@
       <option name="number" value="Default" />
       <updated>1445131276935</updated>
       <workItem from="1445131277511" duration="13015000" />
-      <workItem from="1445494202467" duration="2794000" />
+      <workItem from="1445494202467" duration="5935000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15809000" />
+    <option name="totallyTimeSpent" value="18950000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="813" extended-state="6" />
@@ -580,21 +579,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/pop.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1497" max-vertical-offset="2355">
-          <caret line="125" column="24" selection-start-line="125" selection-start-column="24" selection-end-line="125" selection-end-column="24" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-8.5" vertical-offset="336" max-vertical-offset="1050">
+          <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/js/pop.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5515695" vertical-offset="156" max-vertical-offset="825">
-          <caret line="35" column="11" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
-          <folding />
+        <state vertical-scroll-proportion="1.6883117" vertical-offset="0" max-vertical-offset="2490">
+          <caret line="78" column="24" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

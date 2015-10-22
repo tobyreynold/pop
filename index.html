@@ -16,6 +16,10 @@
     <button type="button" id="tips">
         提示
     </button>
+
+    <button type="button" id="diy">
+        diy
+    </button>
 </div>
 <script src="http://apps.bdimg.com/libs/zepto/1.1.4/zepto.js"></script>
 <script src="js/pop.js"></script>
@@ -42,6 +46,17 @@
                 closefunc:function() {alert(1);}
             }
         );
+    });
+
+    $("#diy").click(function(){
+        pop.diy({
+                showbg:true,
+                html:'<div>This is a object!</div>',
+                func: function() {
+                        alert(1);
+                },
+                close:true
+           });
     });
 
 </script>

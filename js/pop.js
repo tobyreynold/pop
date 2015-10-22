@@ -23,11 +23,10 @@
          *      okText:'ok',
          *      okfunc:func,
          *      content:'text',
-         *      cancelText:'cancel'
-         *
-         *
-         *
-         *
+         *      cancelText:'cancel',
+         *      html:'',
+         *      func:func
+         *      type:'alert||confirm||tips||diy'
          *  }
          */
         _create:function(config) {
@@ -45,12 +44,11 @@
 
             body.append(this._element);
 
-            if(config.close && config.closefunc) {
+            if(config.close || config.closefunc) {
                 body.on('click','.pop-close,.pop-bg',function() {
                     _this.close(config);
                 });
             }
-
         },
 
         _show:function(config) {
@@ -58,7 +56,7 @@
                 html;
             this._create(conf);
 
-            if(config.title && config.close) {
+            if(config.title && (config.close || config.closefunc)) {
                 html = "<h4>"+ config.title +"<span class='pop-close'>X</span></h4>";
             } else if (config.title) {
                 html = "<h4>"+ config.title +"</h4>";
@@ -69,7 +67,6 @@
             }
 
             if(config.type == "alert" || config.type == 'confirm') {
-
                 html += '<div class="pop-main">'+ config.content +'</div>';
                 if(config.type == "alert" && config.okText) {
                     html += '<div><span class="btn-ok">'+ (config.okText? config.okText:'OK') +'</span></div>';
@@ -78,12 +75,14 @@
                 } else {
                     html += config.text;
                 }
+            } else if(config.type == 'diy') {
+                html += config.html;
             } else {
                 html += '<div class="pop-main">'+ config.content +'</div>';
             }
 
-            this._element.append(html);
 
+            this._element.append(html);
         },
 
 
@@ -98,13 +97,12 @@
         },
 
         /**
+         * text : 'string' or html
          * config
          *  {
          *      closefunc:func,
          *      closeTime:300
          *  }
-         *
-         *  text : 'string' or html
          */
 
         tips:function(text,config) {
@@ -132,6 +130,18 @@
 
         },
 
+        diy: function (config) {
+            var conf = {
+                type :'diy',
+                html: config.html,
+                func: config.func,
+                showbg:config.showbg,
+                close:config.close
+            };
+
+            this._show(conf);
+        },
+
         close:function(config) {
             if(config.closefunc) {
                config.closefunc();
@@ -142,7 +152,6 @@
                 this._element_bg.remove();
             }
         }
-
 
     };
 
