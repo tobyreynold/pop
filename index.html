@@ -13,6 +13,9 @@
         弹层
     </button>
 
+    <button type="button" id="tips">
+        提示
+    </button>
 </div>
 <script src="http://apps.bdimg.com/libs/zepto/1.1.4/zepto.js"></script>
 <script src="js/pop.js"></script>
@@ -31,6 +34,14 @@
             okText:'好',
             cancelText:'不好'
         });
+    });
+
+    $("#tips").click(function(){
+        pop.tips('你好啊',
+            {
+                closefunc:function() {alert(1);}
+            }
+        );
     });
 
 </script>
