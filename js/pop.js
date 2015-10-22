@@ -14,7 +14,6 @@
 
         _element_bg:null,
 
-
         /**
          * config
          *  {
@@ -32,7 +31,8 @@
          *  }
          */
         _create:function(config) {
-
+            $(".pop-bg").remove();
+            $(".pop-content").remove();
             var _this = this,
                 body = $("body");
 
@@ -97,7 +97,40 @@
             this._show(config);
         },
 
-        tips:function() {},
+        /**
+         * config
+         *  {
+         *      closefunc:func,
+         *      closeTime:300
+         *  }
+         *
+         *  text : 'string' or html
+         */
+
+        tips:function(text,config) {
+            var body = $("body"),
+                _this = this;
+            $(".pop-tips").remove();
+
+            if(text) {
+                var html = "<div class='pop-tips'>"+ text +"</div>";
+                this._element = $(html);
+                body.append(this._element);
+
+                if(config.closeTime) {
+                    setTimeout(function(){
+                        _this.close(config);
+                    },config.closeTime);
+                } else {
+                    setTimeout(function(){
+                        _this.close(config);
+                    },2000);
+                }
+            } else {
+                return false;
+            }
+
+        },
 
         close:function(config) {
             if(config.closefunc) {
@@ -105,12 +138,13 @@
             }
 
             this._element.remove();
-            this._element_bg.remove();
+            if(this._element_bg) {
+                this._element_bg.remove();
+            }
         }
 
 
     };
-
 
     window.pop = pop;
 
